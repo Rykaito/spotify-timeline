@@ -1,0 +1,89 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-auto-rows: minmax(200px, min-content);
+}
+
+.banner {
+    grid-column: 1 / 3;
+    padding: 4rem 10rem 6rem 6rem;
+    background-color: rgb(15, 219, 117);
+    height: 100vh;
+}
+
+.banner h1 {
+    font-family: 'Arvo', serif;
+    font-size: 4rem;
+    letter-spacing: .2rem;
+    word-spacing: .25rem;
+    padding: 2rem 0;
+}
+
+.banner h2 {
+    padding: 3rem 0;
+}
+
+.banner a {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+.release {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 2px dashed black;
+    font-family: 'Arvo', serif;
+    font-size: 2rem;
+    letter-spacing: .5rem;
+    background-color: rgba(27, 27, 224, 0.664);
+}
+
+.release a {
+    border: .25rem solid white;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transition: transform 250ms ease-in-out;
+}
+
+.release a:hover {
+    transform: scale(1.5);
+}
+
+/* .release:hover ~ .media .album {
+    visibility: visible;
+} */
+
+
+.media {
+    background-color:brown;
+    display: flex;
+    justify-content: space-around flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.album {
+    width: 200px;
+    height: 200px;
+    margin: 2rem;
+    background-color: black;
+    border: 1px solid white;
+    /* visibility: hidden; */
+}
