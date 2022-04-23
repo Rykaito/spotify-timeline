@@ -13,7 +13,7 @@ const Tracks = ({ token }) => {
 
   const getTopTracks = async () => {
     //api call
-    const result = await fetch("https://api.spotify.com/v1/me/top/tracks", {
+    const result = await fetch("https://api.spotify.com/v1/me/top/tracks?limit=50", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -45,51 +45,9 @@ const Tracks = ({ token }) => {
 
   return (
     <>
-      <div class="release">
-        {/* <button onClick={groupTracksByYear}>group</button> */}
-        <button onClick={() => console.log(uniqueYears)}>Uyears</button>
-        <button onClick={() => console.log(tracks)}>tracks</button>
-        <a>1990</a>
-      </div>
-      <div class="media">
-        <div class="album"></div>
-        <div class="album"></div>
-        <div class="album"></div>
-        <div class="album"></div>
-      </div>
       {uniqueYears.map((year) => (
-        <>
-          <div className="release">
-            <a>{year}</a>
-          </div>
-          <div className="media">
-            {tracks.forEach((track) => {
-                if (track.album.release_date.substring(0, 4) === year) {
-                    console.log(4)
-                  return <Media />
-              }
-            })}
-          </div>
-        </>
+        <Media key={year} year={year} tracks={tracks}/>
       ))}
-      <div class="release">
-        <a>2000</a>
-      </div>
-      <div class="media">
-        <div class="album"></div>
-        <div class="album"></div>
-        <div class="album"></div>
-        <div class="album"></div>
-      </div>
-      <div class="release">
-        <a>3000</a>
-      </div>
-      <div class="media">
-        <div class="album"></div>
-        <div class="album"></div>
-        <div class="album"></div>
-        <div class="album"></div>
-      </div>
     </>
   );
 };

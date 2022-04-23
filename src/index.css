@@ -63,7 +63,7 @@ a:hover {
 }
 
 .release a:hover {
-    transform: scale(1.5);
+    transform: scale(1.25);
 }
 
 /* .release:hover ~ .media .album {
@@ -80,10 +80,36 @@ a:hover {
 }
 
 .album {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     margin: 2rem;
+    display: flex;
     background-color: black;
-    border: 1px solid white;
+    text-decoration: none;
     /* visibility: hidden; */
 }
+
+img {
+    position: absolute;
+    transition: opacity 250ms ease-in-out;
+}
+
+p.album-title {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    align-self: center;
+    opacity: 0;
+    color: white;
+    z-index: 1;
+    transition: opacity 250ms ease-in-out;
+}
+
+.album:hover p.album-title {
+    opacity: 100%
+}
+
+.album:hover img {
+    opacity: 20%;
+}
+
