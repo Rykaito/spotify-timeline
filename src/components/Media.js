@@ -7,8 +7,6 @@ const Media = ({ year, tracks }) => {
       <div className="media">
         {tracks.map(function (track) {
           if (track.album.release_date.substring(0, 4) === year) {
-            console.log(track);
-            //   console.log(track.album.images[1].url)
             return (
                 <a className="album" key={track.name + " album"} href={track.external_urls.spotify} target="_blank">
                   <img

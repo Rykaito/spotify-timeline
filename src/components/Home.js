@@ -16,7 +16,7 @@ const Home = () => {
 
   useEffect(() => {
     const hash = window.location.hash;
-    let token = window.localStorage.getItem("token");
+    let token = window.sessionStorage.getItem("token");
     if (!token && hash) {
       token = hash
         .substring(1)
@@ -24,37 +24,36 @@ const Home = () => {
         .find((elem) => elem.startsWith("access_token"))
         .split("=")[1];
       window.location.hash = "";
-      window.localStorage.setItem("token", token);
+      window.sessionStorage.setItem("token", token);
     }
     setToken(token);
   }, []);
 
   const logout = () => {
     setToken("");
-    window.localStorage.removeItem("token");
+    window.sessionStorage.removeItem("token");
   };
 
   return (
     <div>
       {!token ? (
         <div className="container">
-          <div className="banner">
-            <h2>Log in with Spotify to get started!</h2>
-            <a href={auth_uri}>click here</a>
+          <div className="banner loggedOut">
+            <h1>Welcome to Spotify Timeline!</h1>
+            <h2>
+              See your favorite songs ordered by the year they were released
+            </h2>
+            <a href={auth_uri}>Log in with Spotify</a>
           </div>
         </div>
       ) : (
         <div className="container">
-          <div className="banner">
-            <h1>Welcome to Spotify Timeline</h1>
-            <h2>
-              scroll down to see your favorite songs grouped by the year they
-              came out
-            </h2>
-            <button onClick={logout}>log out</button>
+          <div className="banner loggedIn">
+              <button onClick={logout}>log out</button>
           </div>
           <Tracks token={token} />
-        </div>
+          </div>
+          
       )}
     </div>
   );
