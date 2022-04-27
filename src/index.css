@@ -5,13 +5,13 @@
 }
 
 :root {
-  --main-bg-color: linear-gradient(#e729d4b5,#e6b332c5);
+  --main-bg-color: linear-gradient(#e729d4b5, #e6b332c5);
   --timeline-bg-highlight-color: #b8b8b84f;
   --text-color: #fffbed;
   --shadow-color: rgb(13, 8, 54);
   --btn-color: #3583ff;
   --btn-highlight-color: #787878;
-  --font-text: 'Podkova', serif;
+  --font-text: "Podkova", serif;
 }
 
 html::-webkit-scrollbar {
@@ -28,6 +28,7 @@ body {
   margin: 0;
   font-family: var(--font-text);
   background-image: var(--main-bg-color);
+  overscroll-behavior-y: none;
 }
 
 a:hover {
@@ -50,33 +51,27 @@ a:hover {
   align-items: center;
   justify-content: space-evenly;
   text-shadow: 6px 6px 6px var(--shadow-color);
+  letter-spacing: 0.2rem;
+  text-align: center;
 }
 
 .banner h1 {
-  font-family: var(--font-text);
   font-size: 4.5rem;
-  letter-spacing: 0.5rem;
-  word-spacing: 1.25rem;
-  margin: 2rem;
-  text-align: center;
 }
 
-.banner h2 {
-  margin: 2rem;
-  font-size: 2rem;
-  letter-spacing: .2rem;
-  text-align: center;
+.loggedOut > * {
+  margin: 0 2rem;
 }
 
 .banner a {
   border: 1rem double var(--text-color);
   color: var(--text-color);
   background-color: var(--btn-color);
-  border-radius: 50px;
+  border-radius: 5rem;
   text-decoration: none;
   font-size: 3rem;
-  padding: 1.5rem;
-  white-space: nowrap;
+  padding: 1.5rem; 
+  margin: 0 4rem;
   transition: background-color 250ms ease-in-out;
   text-shadow: none;
 }
@@ -92,7 +87,7 @@ button:hover {
   right: 1rem;
   top: 1rem;
   border: 0.25rem solid var(--text-color);
-  border-radius: 50px;
+  border-radius: 5rem;
   font-family: var(--font-text);
   z-index: 1;
 }
@@ -109,14 +104,14 @@ button:hover {
 button {
   background: none;
   background-color: var(--btn-color);
-  border-radius: 50px;
+  border-radius: 5rem;
   padding: 1rem;
   font-family: inherit;
   cursor: pointer;
   color: inherit;
   transition: background-color 250ms ease-in-out;
   font-size: 1.5rem;
-  letter-spacing: .05rem;
+  letter-spacing: 0.05rem;
 }
 
 .release {
@@ -130,7 +125,7 @@ button {
 .release a {
   border: 0.75rem double var(--text-color);
   color: var(--text-color);
-  padding: 5px;
+  padding: 0.5rem;
   border-radius: 1rem;
   border-top-right-radius: 5rem;
   border-bottom-right-radius: 5rem;
@@ -156,7 +151,7 @@ button {
 img {
   position: absolute;
   transition: opacity 250ms ease-in-out;
-  box-shadow: .5rem .75rem var(--shadow-color);
+  box-shadow: 0.5rem 0.75rem var(--shadow-color);
 }
 
 p.album-title {

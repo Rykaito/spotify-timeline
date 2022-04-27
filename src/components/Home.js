@@ -8,7 +8,7 @@ const Home = () => {
     response_type: "token",
     client_id: "71c45e2025194e60a7b08f6fc0906444",
     scope: "user-read-email user-read-private user-library-read user-top-read",
-    redirect_uri: "http://localhost:3000",
+    redirect_uri: "https://rykaito.github.io/spotify-timeline",
     show_dialog: true, // requests access each log in attempt
   };
   const qs = new URLSearchParams(uriParams);

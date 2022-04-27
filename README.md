@@ -1,1 +1,1 @@
-Unfinished project to show a user's top songs on spotify ordered by release year
+Spotify API application to show your top tracks ordered by release year. Must have a spotify account to make use of the application.
